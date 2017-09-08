@@ -1,0 +1,1 @@
+webpackJsonp([0],[,function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var o=t(0),c=t.n(o);document.body.appendChild(function(){var e=document.createElement("pre");return e.innerHTML=c.a.join(["Hello webpack!","5 cubed is equal to "]," "),e}())}],[1]);
