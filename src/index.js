@@ -1,34 +1,8 @@
-import _ from 'lodash';
-import numRef from './ref.json';
+import React from 'react';
+import ReactDOM  from 'react-dom';
+import App from './App';
 
-export function numToWord(num) {
-    return _.reduce(numRef, (accum, ref) => {
-        return ref.num === num ? ref.word: accum
-    }, '');
-}
-
-export function wordToNum(word){
-    return _.reduce(numRef, (accum, ref) => {
-        return ref.word === word && word.toLowerCase() ? ref.num : accum;
-    }, -1);
-}
-
-// import _ from 'lodash';
-// // import Print from './print';
-
-// function component() {
-//     var element = document.createElement('div');
-//     var button = document.createElement('button');
-//     var br = document.createElement('br');
-
-//     button.innerHTML = 'Click me and look at the console!';
-//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-//     element.appendChild(br);
-//     element.appendChild(button);
-
-//     // button.onclick = Print.bind(null, 'Hello webpack!');
-
-//     return element;
-// }
-
-// document.body.appendChild(component());
+ReactDOM.render(
+    <App />, 
+    document.getElementById('root')
+);

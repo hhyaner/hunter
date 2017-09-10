@@ -1,50 +1,42 @@
-var path = require('path');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'webpack-numbers.js',
-        library: 'webpackNumbers',
-        libraryTarget: 'umd'
+        filename: "index.js"
     },
-    externals: {
-        lodash: {
-            commonjs: 'lodash',
-            commonjs2: 'lodash',
-            amd: 'lodash',
-            root: '_'
-        }
+    devtool: 'inline-source-map',
+    devServer: {
+        contentBase: './dist'
+    },
+    plugins: [
+        new CleanWebpackPlugin(['dist']),
+        new HtmlWebpackPlugin({
+            filename: 'index.html',
+            template: './src/index.html'
+        })
+    ],
+
+    module: {
+        rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
+            // {
+            //     test: /\.css$/,
+            //     exclude: ['node_modules'],
+            //     use: [
+            //         'style-loader',
+            //         'css-loader'
+            //     ]
+            // }
+        ]
     }
 }
-
-// const path = require('path');
-// const webpack = require('webpack');
-// const CleanWebpackPlugin = require('clean-webpack-plugin');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-
-// module.exports = {
-//     entry: {
-//         main: './src/index.js',
-//         vendor: [
-//             'lodash'
-//         ]
-//     },
-//     plugins: [
-//         new CleanWebpackPlugin(['dist']),
-//         new HtmlWebpackPlugin({
-//             title: 'Caching'
-//         }),
-//         new webpack.HashedModuleIdsPlugin(),
-//         new webpack.optimize.CommonsChunkPlugin({
-//             name: 'vendor'
-//         }),
-//         new webpack.optimize.CommonsChunkPlugin({
-//             name: 'runtime'
-//         })
-//     ],
-//     output: {
-//         filename: '[name].[chunkhash].js',
-//         path: path.resolve(__dirname, 'dist')
-//     }
-// }
