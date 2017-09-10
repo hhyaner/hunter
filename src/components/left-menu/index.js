@@ -5,7 +5,7 @@ export default class LeftMenu extends Component {
         return (
             <div className="left-menu">
                 <ul>
-                    <li>My Drive</li>
+                    <li>LeftMenu</li>
                 </ul>
             </div>
         )
