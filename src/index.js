@@ -1,16 +1,34 @@
-if (process.env.NODE_ENV !== 'production') {
-    console.log('Looks like we are in development mode!');
+import _ from 'lodash';
+import numRef from './ref.json';
+
+export function numToWord(num) {
+    return _.reduce(numRef, (accum, ref) => {
+        return ref.num === num ? ref.word: accum
+    }, '');
 }
 
-function getComponent() {
-    return import('load').then(_ => {
-        var element  = document.createElement('div');
-
-        element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-        
-        return element;
-    }).catch(error => 'An error occurred while loading the component');
+export function wordToNum(word){
+    return _.reduce(numRef, (accum, ref) => {
+        return ref.word === word && word.toLowerCase() ? ref.num : accum;
+    }, -1);
 }
-getComponent().then(component => {
-    document.body.appendChild(component);
-})
+
+// import _ from 'lodash';
+// // import Print from './print';
+
+// function component() {
+//     var element = document.createElement('div');
+//     var button = document.createElement('button');
+//     var br = document.createElement('br');
+
+//     button.innerHTML = 'Click me and look at the console!';
+//     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+//     element.appendChild(br);
+//     element.appendChild(button);
+
+//     // button.onclick = Print.bind(null, 'Hello webpack!');
+
+//     return element;
+// }
+
+// document.body.appendChild(component());

@@ -10,4 +10,4 @@
     "lodash",
     ["antd", { "style": "css" }]
   ]
-}
+} 
