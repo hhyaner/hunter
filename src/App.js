@@ -1,37 +1,35 @@
 import React, { Component } from 'react';
 import ReactDOM  from 'react-dom';
-import LeftMenu from './components/left-menu';
+import Sidebar from './components/sidebar';
 import Clock from './components/clock';
-
-function Welcome(props) {
-    return <h1>Hello, {props.name}</h1>;
-}
-
-function Index() {
-    return (
-        <div>
-            <Welcome name="Sara" />
-            <Welcome name="Cahal" />
-            
-        </div>
-    )
-}
-
+import Login from './components/login';
+import Warm from './components/warm';
 
 export default class App extends Component {
     render() {
         return (
             <div className="app">
-                <Index />
-                <LeftMenu />
+                <div />
+
+<div></div>
+
+<div>{false}</div>
+
+<div>{null}</div>
+
+<div>{undefined}</div>
+
+<div>{true}</div>
+                <div>This is valid HTML &amp; JSX at the same time.</div>
+                <Warm />
+                <Login />
+                <Sidebar />
                 <div>
                     <Clock />
                     <Clock />
                     <Clock />
-                    <Welcome name="张三" /></div>
+                </div>
             </div>
         )
     }
 }
-
-
