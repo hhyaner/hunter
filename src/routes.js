@@ -1,8 +1,8 @@
 import Sidebar from './components/sidebar';
+import MyButtonController from './components/MyButtonController';
 // import Clock from './components/clock';
 import About from './views/about';
 import Home from './views/home';
-import NoMatch from './views/no-match';
 
 const routes = [
     {
@@ -13,9 +13,10 @@ const routes = [
         path: '/about',
         component: About
     },
-    // {
-    //     component: NoMatch
-    // }
+    {
+        path: '/flux',
+        component: MyButtonController
+    }
 ];
 
 export default routes;
