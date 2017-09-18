@@ -1,7 +1,8 @@
-var React = require('react');
-var ListStore = require('../stores/ListStore');
-var ButtonActions = require('../actions/ButtonActions');
-var MyButton = require('./MyButton');
+import React from 'react';
+// var ListStore = require('../stores/ListStore');
+import ListStore from '../stores/ListStore';
+import ButtonActions from '../actions/ButtonActions';
+import MyButton from './MyButton';
 
 var MyButtonController = React.createClass({
   getInitialState: function () {

@@ -1,6 +1,6 @@
 var Dispatcher = require('flux').Dispatcher;
 var AppDispatcher = new Dispatcher();
-var ListStore = require('../stores/ListStore');
+import ListStore from '../stores/ListStore';
 
 AppDispatcher.register(function (action) {
   switch(action.actionType) {

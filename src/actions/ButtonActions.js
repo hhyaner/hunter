@@ -1,4 +1,4 @@
-var AppDispatcher = require('../dispatcher/AppDispatcher');
+import AppDispatcher from '../dispatcher/AppDispatcher';
 
 var ButtonActions = {
   addNewItem: function (text) {
@@ -8,3 +8,5 @@ var ButtonActions = {
     });
   },
 };
+
+export default ButtonActions;

@@ -1,7 +1,6 @@
-var EventEmitter = require('events').EventEmitter;
-var assign = require('object-assign');
+import { EventEmitter } from 'events';
 
-var ListStore = assign({}, EventEmitter.prototype, {
+const ListStore = Object.assign({}, EventEmitter.prototype, {
   items: [],
 
   getAll: function () {
